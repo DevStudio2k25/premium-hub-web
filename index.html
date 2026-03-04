@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Hub — Enterprise-Grade App Subscription Ecosystem</title>
+    <meta name="description" content="Official landing page for Premium Hub. A secure, modern platform for managing premium application subscriptions and licenses.">
+    <link rel="icon" type="image/png" href="icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #6D28D9;
+            --accent: #F472B6;
+            --bg: #0B0F1A;
+            --card-bg: rgba(23, 30, 48, 0.7);
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(255, 255, 255, 0.08);
+            --gradient: linear-gradient(135deg, #8B5CF6 0%, #D946EF 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* --- Background Effects --- */
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .glow-1 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            top: -300px;
+            right: -200px;
+            animation: drift 20s infinite alternate;
+        }
+        .glow-2 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 114, 182, 0.08) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: drift 25s infinite alternate-reverse;
+        }
+        @keyframes drift {
+            from { transform: translate(0, 0); }
+            to { transform: translate(150px, 150px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(11, 15, 26, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .logo-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            object-fit: contain;
+            border: 1px solid var(--border);
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Hide on mobile for simplicity, or add a hamburger later */
+            .logo { font-size: 1.1rem; }
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 60px 0 100px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 8px 24px -6px rgba(139, 92, 246, 0.4);
+        }
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            background: var(--glass);
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (max-width: 1024px) {
+            .hero { grid-template-columns: 1fr; text-align: center; padding-top: 40px; }
+            .hero-content { display: flex; flex-direction: column; align-items: center; }
+            .hero-content h1 { font-size: 3rem; }
+            .hero-image { max-width: 500px; margin: 0 auto; order: -1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- Stats Grid --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 80px;
+        }
+        @media (min-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        .stat-label {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+        .stat-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* --- Sections --- */
+        section { padding: 60px 0; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 2.25rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .section-title p {
+            color: var(--text-dim);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .feature-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* --- Gallery --- */
+        .gallery-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .gallery-wrap { grid-template-columns: 1fr 1fr; }
+        }
+        .screen-item {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .screen-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Calculator --- */
+        .calc-box {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 32px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        @media (min-width: 900px) {
+            .calc-box { grid-template-columns: 1.2fr 0.8fr; padding: 60px; }
+        }
+        .app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .app-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .app-item.active {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--primary);
+        }
+        .price-display {
+            text-align: center;
+            background: rgba(0,0,0,0.2);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+        }
+        .final-amt {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin: 10px 0;
+            font-family: 'Outfit';
+        }
+
+        /* --- Footer --- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 60px 0 40px;
+            background: rgba(11, 15, 26, 0.9);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            margin-bottom: 24px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="glow">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <nav>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <img src="icon.png" alt="Logo" class="logo-img">
+                PREMIUM HUB
+            </a>
+            <div class="nav-links">
+                <a href="#features">Platform</a>
+                <a href="#gallery">Interface</a>
+                <a href="#calculator">Pricing</a>
+                <a href="mailto:devstudio2k25@gmail.com">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Professional App Asset Management</h1>
+                <p>A unified portal for licensing, subscribing, and deploying professional Android applications. Secure. Reliable. Modern.</p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <i data-lucide="cloud-download"></i> Download Hub
+                    </a>
+                    <a href="#gallery" class="btn btn-outline">Preview UX</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero.png" alt="App Dashboard">
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <div class="stats-grid reveal">
+            <div class="stat-card">
+                <span class="stat-label">Build Type</span>
+                <span class="stat-value">v1.0.0 Stable</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">System Node</span>
+                <span class="stat-value">Hub Engine</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Environment</span>
+                <span class="stat-value">Android Native</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Individual Developer</span>
+                <span class="stat-value">Ankesh Kumawat</span>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <section id="features">
+            <div class="section-title reveal">
+                <h2>The Premium Ecosystem</h2>
+                <p>Enterprise-grade security meets user-centric design.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i data-lucide="layers"></i></div>
+                    <h3>Multi-Asset Control</h3>
+                    <p>Centralize your subscription portfolio and app licenses in one secure location.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i data-lucide="credit-card"></i></div>
+                    <h3>Razorpay Integrated</h3>
+                    <p>Global payment workflows with high-compliance transaction logging.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="icon-box"><i data-lucide="refresh-cw"></i></div>
+                    <h3>Cloud Sync Engine</h3>
+                    <p>Powered by Firebase infrastructure for zero-latency state updates across devices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery">
+            <div class="section-title reveal">
+                <h2>Interface Walkthrough</h2>
+                <p>Sleek, modern, and adaptive dark-mode interface.</p>
+            </div>
+            <div class="gallery-wrap reveal">
+                <div class="screen-item"><img src="dash.png" alt="Dashboard"></div>
+                <div class="screen-item"><img src="price.png" alt="Pricing"></div>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section id="calculator">
+            <div class="section-title reveal">
+                <h2>Dynamic Pricing</h2>
+                <p>Plans are tailored per application. Estimate your savings below.</p>
+            </div>
+            <div class="calc-box reveal">
+                <div class="app-list">
+                    <div class="app-item" onclick="updateCalc(this, 199)">
+                        <span>Pro Scanner Module</span>
+                        <span>₹199</span>
+                    </div>
+                    <div class="app-item" onclick="updateCalc(this, 149)">
+                        <span>Dev Insight Pro</span>
+                        <span>₹149</span>
+                    </div>
+                    <div class="app-item" onclick="updateCalc(this, 299)">
+                        <span>Velocity Engine</span>
+                        <span>₹299</span>
+                    </div>
+                </div>
+                <div class="price-display">
+                    <span class="stat-label">Monthly Total</span>
+                    <div class="final-amt" id="totalAmt">₹0</div>
+                    <p style="font-size:0.8rem; color:var(--text-dim);">Terms verified at checkout.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployment -->
+        <section id="download" class="reveal">
+            <div style="
+                background: linear-gradient(135deg, rgba(255,255,255,0.01) 0%, rgba(139, 92, 246, 0.05) 100%);
+                border: 1px solid var(--border);
+                border-radius: 32px;
+                padding: 80px 24px;
+                text-align: center;
+                backdrop-filter: blur(10px);
+            ">
+                <h2 style="font-size: 2.25rem; margin-bottom: 16px;">Ready to Elevate?</h2>
+                <p style="color:var(--text-dim); margin-bottom: 40px; max-width: 500px; margin: 0 auto 40px;">Deploy the official Premium Hub APK for professional precision.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://github.com/DevStudio2k25/premium-hub-web/releases" class="btn btn-primary">
+                        <i data-lucide="github"></i> Official Releases
+                    </a>
+                    <a href="mailto:devstudio2k25@gmail.com" class="btn btn-outline">
+                        <i data-lucide="mail"></i> Support Contact
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col" style="grid-column: span 2;">
+                    <a href="index.html" class="logo" style="margin-bottom: 16px;">
+                        <img src="icon.png" alt="Logo" class="logo-img"> PREMIUM HUB
+                    </a>
+                    <p style="font-size:0.9rem; color:var(--text-dim); max-width:300px;">Crafted by Ankesh Kumawat for the modern app ecosystem.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#calculator">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Governance</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="refund.html">Refunds</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ankesh Kumawat. All rights reserved. <br>Razorpay Compliance Optimized.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        let total = 0;
+        function updateCalc(el, price) {
+            el.classList.toggle('active');
+            total += el.classList.contains('active') ? price : -price;
+            document.getElementById('totalAmt').innerText = '₹' + Math.max(0, total);
+        }
+    </script>
+</body>
+</html>

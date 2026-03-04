@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation & Refund — Premium Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #F43F5E;
+            --bg: #0B0F1A;
+            --card-bg: rgba(23, 30, 48, 0.5);
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.8; padding: 60px 24px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        header h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin-bottom: 12px; }
+        .content { background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border); padding: 50px; backdrop-filter: blur(10px); }
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-top: 32px; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        p { margin-bottom: 20px; color: var(--text-dim); }
+        ul { margin-bottom: 24px; padding-left: 24px; color: var(--text-dim); }
+        li { margin-bottom: 10px; }
+        .warning-box { background: rgba(244, 63, 94, 0.1); border: 1px solid var(--primary); border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 32px; border-left: 8px solid var(--primary); }
+        .warning-box h3 { color: var(--primary); margin-bottom: 8px; font-family: 'Outfit', sans-serif; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 40px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .content { padding: 24px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Refund & Cancellation</h1>
+            <p>Transparency policy for Premium Hub users</p>
+        </header>
+
+        <div class="content">
+            <div class="warning-box">
+                <h3><i data-lucide="alert-triangle"></i> NO REFUND POLICY</h3>
+                <p style="color: #fff; font-weight: 600;">All digital subscription sales are final. We do not provide refunds for consumed digital goods.</p>
+            </div>
+
+            <h2><i data-lucide="info"></i> 1. Digital Nature</h2>
+            <p>
+                Applications licensed through Premium Hub are digital-only products that are immediately activated upon successful payment via Razorpay. We do not offer refunds once the service is accessible.
+            </p>
+
+            <h2><i data-lucide="shield-off"></i> 2. Cancellation</h2>
+            <p>
+                You may cancel your manual subscription renewal at any time. Cancellation simply stops future billing. Active subscriptions continue until the end of the current period.
+            </p>
+
+            <h2><i data-lucide="help-circle"></i> 3. Disputes</h2>
+            <p>
+                In the rare event of a duplicate charge due to a payment gateway error, reach out to our support with your transaction ID. We will resolve billing discrepancies related to system errors.
+            </p>
+
+            <h2><i data-lucide="zap-off"></i> 4. Technical Issues</h2>
+            <p>
+                Service unavailability or software bugs do not qualify for refunds. We provide direct support to troubleshoot and fix application issues. Service extensions may be granted at our discretion.
+            </p>
+
+            <h2><i data-lucide="mail"></i> 6. Support Inquiry</h2>
+            <p>
+                For any questions regarding billing or your account, please email us directly:<br>
+                <strong>Official Support:</strong> devstudio2k25@gmail.com<br>
+                <strong>Developer Contact:</strong> <a href="mailto:ankeshkumawat155@gmail.com">ankeshkumawat155@gmail.com</a>
+            </p>
+
+            <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Return to Hub</a>
+        </div>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

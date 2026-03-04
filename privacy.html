@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Premium Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #D946EF;
+            --bg: #0B0F1A;
+            --card-bg: rgba(23, 30, 48, 0.5);
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.8; padding: 60px 24px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        header h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin-bottom: 12px; }
+        .content { background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border); padding: 50px; backdrop-filter: blur(10px); }
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-top: 32px; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        p { margin-bottom: 20px; color: var(--text-dim); }
+        ul { margin-bottom: 24px; padding-left: 24px; color: var(--text-dim); }
+        li { margin-bottom: 10px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 40px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .content { padding: 24px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Privacy Policy</h1>
+            <p>Transparency Policy by Ankesh Kumawat</p>
+        </header>
+
+        <div class="content">
+            <h2><i data-lucide="database"></i> 1. Collections</h2>
+            <p>
+                We collect personal information necessary to provide authentication and subscription services. This includes your name, email address, and device identifiers to process your licensing.
+            </p>
+
+            <h2><i data-lucide="lock"></i> 2. Financial Data</h2>
+            <p>
+                Premium Hub uses Razorpay to process payments. Financial information is never stored directly on our servers. Razorpay handles all data securely according to industry compliance standards.
+            </p>
+
+            <h2><i data-lucide="cloud"></i> 3. Analytics & Storage</h2>
+            <p>
+                We use Firebase Firestore and Real-time Database to synchronize your subscription status. We may collect app usage statistics to improve system stability and performance.
+            </p>
+
+            <h2><i data-lucide="share-2"></i> 4. Data Sharing</h2>
+            <p>
+                We do not sell or trade your data. Information is only shared with core service providers (Razorpay, Firebase) that facilitate the core functionality of the Premium Hub.
+            </p>
+
+            <h2><i data-lucide="pen-tool"></i> 5. Consent</h2>
+            <p>
+                By using our application, you agree to the collection and use of your information as outlined in this policy. You can request account deletion at any time via support.
+            </p>
+
+            <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Return to Hub</a>
+        </div>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

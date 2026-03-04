@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions — Premium Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --bg: #0B0F1A;
+            --card-bg: rgba(23, 30, 48, 0.5);
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg); color: var(--text-main); line-height: 1.8; padding: 60px 24px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        header h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; margin-bottom: 12px; }
+        .content { background: var(--card-bg); border-radius: 24px; border: 1px solid var(--border); padding: 50px; backdrop-filter: blur(10px); }
+        h2 { font-family: 'Outfit', sans-serif; font-size: 1.5rem; margin-top: 32px; margin-bottom: 16px; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        p { margin-bottom: 20px; color: var(--text-dim); }
+        ul { margin-bottom: 24px; padding-left: 24px; color: var(--text-dim); }
+        li { margin-bottom: 10px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 40px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        @media (max-width: 600px) { .content { padding: 24px; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Terms & Conditions</h1>
+            <p>Last Revised: March 2024</p>
+            <p>
+                <strong>Email:</strong> devstudio2k25@gmail.com<br>
+                <strong>Developer:</strong> Ankesh Kumawat
+            </p>
+        </header>
+
+        <div class="content">
+            <h2><i data-lucide="shield"></i> 1. Acceptance</h2>
+            <p>
+                By using Premium Hub, you confirm that you have read, understood, and agree to be bound by these Terms and Conditions. This agreement covers all aspects of the application and integrated payment services.
+            </p>
+
+            <h2><i data-lucide="app-window"></i> 2. Platform Usage</h2>
+            <p>
+                Premium Hub provides a utility for licensing and managing third-party professional Android applications. You agree not to misuse the platform, distribute account credentials, or attempt unauthorized access to restricted features.
+            </p>
+
+            <h2><i data-lucide="tag"></i> 3. Application-Specific Plans</h2>
+            <p>
+                Pricing and subscription tiers (6 months, 1 year, lifetime) are subject to variation depending on the specific application being licensed. All final costs are displayed clearly within the Hub before payment execution.
+            </p>
+
+            <h2><i data-lucide="credit-card"></i> 4. Payments via Razorpay</h2>
+            <p>
+                All financial transactions are handled securely via Razorpay. We do not store sensitive card information. Ensure your payment methods are valid and authorized before purchase.
+            </p>
+
+            <h2><i data-lucide="trash-2"></i> 5. Termination</h2>
+            <p>
+                We reserve the right to suspend accounts that violate our usage policies or engage in suspicious licensing activity. Suspended accounts lose access to all active premium modules.
+            </p>
+
+            <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Return to Hub</a>
+        </div>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
