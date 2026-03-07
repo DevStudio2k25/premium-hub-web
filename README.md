@@ -4,15 +4,50 @@
 
 Ye landing page Razorpay verification ke liye banaya gaya hai. Isme app ki complete details, features, aur policies included hain.
 
+**🚀 Dynamic Content System:** Sab data GitHub repository se automatically fetch hota hai - koi manual update ki zarurat nahi!
+
+---
+
+## Dynamic Features
+
+### ✅ Automatically Fetched from GitHub:
+
+1. **Latest APK Download Link** - Har naye release pe automatically update
+2. **Version Number** - Latest release tag se fetch
+3. **APK File Size** - Download button pe display
+4. **Repository Stats** - Stars, forks, watchers (optional)
+5. **Release Notes** - Latest release description (optional)
+
+### 🔧 Configuration
+
+`config.js` file me sab settings hain:
+
+```javascript
+const CONFIG = {
+    github: {
+        owner: 'DevStudio2k25',
+        repo: 'premium-hub-web'
+    },
+    features: {
+        autoRefresh: true,        // Auto refresh data
+        refreshInterval: 10 * 60 * 1000,  // 10 minutes
+        showRepoStats: true,      // Show GitHub stats
+        showDownloadCount: true   // Show download count
+    }
+};
+```
+
 ---
 
 ## Files Included
 
-1. **index.html** - Main landing page
-2. **terms.html** - Terms & Conditions
-3. **privacy.html** - Privacy Policy
-4. **refund.html** - Refund Policy
-5. **README.md** - Ye file
+1. **index.html** - Main landing page (dynamic content enabled)
+2. **app.js** - GitHub API integration & dynamic data loader
+3. **config.js** - Configuration for dynamic features
+4. **terms.html** - Terms & Conditions
+5. **privacy.html** - Privacy Policy
+6. **refund.html** - Refund Policy
+7. **README.md** - Ye file
 
 ---
 
@@ -64,7 +99,7 @@ Ye landing page Razorpay verification ke liye banaya gaya hai. Isme app ki compl
 
 ## APK Upload Steps
 
-### GitHub Release (Recommended)
+### GitHub Release (Recommended) - Automatic Update System
 
 1. **APK Build Karo:**
 
@@ -78,18 +113,26 @@ Ye landing page Razorpay verification ke liye banaya gaya hai. Isme app ki compl
    - "Create a new release" click karo
 
 3. **Release Details:**
-   - Tag: v1.0.0
-   - Title: Premium Hub v1.0.0
-   - Description: Initial release
+   - Tag: v1.0.1 (ya jo bhi next version ho)
+   - Title: Premium Hub v1.0.1
+   - Description: Release notes (optional)
    - Upload APK: `build/app/outputs/flutter-apk/app-release.apk`
 
 4. **Publish Release:**
    - "Publish release" button click karo
-   - APK download link mil jayega
+   - **🎉 Website automatically update ho jayegi!** Koi manual change ki zarurat nahi!
 
-5. **Landing Page Update Karo:**
-   - index.html mein download button ka href update karo
-   - APK link paste karo
+5. **Verification:**
+   - Website pe jao aur refresh karo
+   - Download button automatically latest APK link show karega
+   - Version number bhi update ho jayega
+
+### ⚡ Kaise Kaam Karta Hai?
+
+- `app.js` har 5 minutes me GitHub API check karta hai
+- Latest release automatically detect hota hai
+- Download links aur version info real-time update hote hain
+- Caching system fast loading ensure karta hai
 
 ---
 

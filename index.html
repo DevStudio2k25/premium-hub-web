@@ -7,6 +7,9 @@
     <meta name="description" content="Official landing page for Premium Hub. A secure, modern platform for managing premium application subscriptions and licenses.">
     <link rel="icon" type="image/png" href="icon.png">
     
+    <!-- Notification System -->
+    <link rel="stylesheet" href="notification.css">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -437,8 +440,8 @@
                 <h1>Professional App Asset Management</h1>
                 <p>A unified portal for licensing, subscribing, and deploying professional Android applications. Secure. Reliable. Modern.</p>
                 <div class="hero-actions">
-                    <a href="#download" class="btn btn-primary">
-                        <i data-lucide="cloud-download"></i> Download Hub
+                    <a href="#" id="heroDownloadBtn" class="btn btn-primary" download>
+                        <i data-lucide="cloud-download"></i> <span id="heroDownloadText">Loading...</span>
                     </a>
                     <a href="#gallery" class="btn btn-outline">Preview UX</a>
                 </div>
@@ -547,9 +550,8 @@
                 <h2 style="font-size: 2.25rem; margin-bottom: 16px;">Ready to Elevate?</h2>
                 <p style="color:var(--text-dim); margin-bottom: 40px; max-width: 500px; margin: 0 auto 40px;">Deploy the official Premium Hub APK for professional precision.</p>
                 <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://github.com/DevStudio2k25/premium-hub-web/releases/download/v1.0.0/app-release.apk"
-                        class="btn btn-primary" download>
-                        <i data-lucide="cloud-download"></i> Direct Download APK
+                    <a href="#" id="downloadApkBtn" class="btn btn-primary" download>
+                        <i data-lucide="cloud-download"></i> <span id="downloadBtnText">Loading APK...</span>
                     </a>
                     <a href="mailto:devstudio2k25@gmail.com" class="btn btn-outline">
                         <i data-lucide="mail"></i> Support Contact
@@ -591,6 +593,11 @@
         </div>
     </footer>
 
+    <!-- Dynamic GitHub Data Loader -->
+    <script src="config.js"></script>
+    <script src="notification.js"></script>
+    <script src="app.js"></script>
+    
     <script>
         lucide.createIcons();
         const observer = new IntersectionObserver((entries) => {
